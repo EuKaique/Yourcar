@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import tw from 'twin.macro'
+import { BookCard } from "../../components/bookCard";
 import { NavBar } from "../../components/navBar";
 import { TopSection } from "./topSection";
 
@@ -16,10 +17,15 @@ const PageContainer = styled.div`
 `
 
 export function HomePage(){
+    const screen = window.innerWidth;
+
     return(
         <PageContainer>
             <NavBar />
             <TopSection />
+            {screen >= 640 && (
+                <BookCard />
+            )}
         </PageContainer>
     )
 }

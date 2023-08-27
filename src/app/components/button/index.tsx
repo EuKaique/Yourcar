@@ -1,0 +1,66 @@
+import { styled } from "styled-components"
+import tw from "twin.macro"
+
+interface ButtonProps {
+    theme?: "filled" | "outlined"
+    text: string
+} 
+
+const BaseButton = styled.button`
+    ${tw`
+        px-5
+        py-3
+        outline-none
+        rounded-md
+        text-white
+        text-xs
+        font-semibold
+        border-transparent
+        border-2
+        border-solid
+        focus:outline-none
+        transition-all
+        duration-200
+        ease-in-out
+        m-1
+    `}
+`
+
+const OutlinedButton = styled(BaseButton)`
+    ${tw`
+        bg-red-500
+        cursor-pointer
+    `}
+
+    &:hover{
+        color: var(--color-red-500);
+        background-color: transparent;
+        border-color: var(--color-red-500);
+    }
+`
+
+const FilledButton = styled(BaseButton)`
+    ${tw`
+        border-red-500
+        text-red-500
+        bg-transparent
+        cursor-pointer
+    `}
+    
+    &:hover{
+        background-color: var(--color-red-500);
+        color: #FFFFFF;
+        border-color: transparent;
+    }
+`
+
+export function Button(props: ButtonProps){
+    const { theme, text } = props
+
+    if(theme === 'filled'){
+        return <FilledButton>{text}</FilledButton>
+    }else{
+        return <OutlinedButton>{text}</OutlinedButton>
+    }
+
+}
