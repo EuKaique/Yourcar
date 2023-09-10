@@ -302,3 +302,29 @@ export const InfoText = styled.p`
         mt-4
     `}
 `
+
+//TOP CARS
+export const TopCarsContainer = styled.div`
+    ${tw`
+        max-w-screen-lg
+        w-full
+        flex
+        flex-col
+        items-center
+        justify-center
+        px-4
+        md:px-0
+        mb-10
+    `}
+`
+
+export const CarsContainer = styled.div`
+    ${tw`
+        w-full
+        flex
+        flex-wrap
+        justify-center
+        mt-7
+        md:mt-10
+    `}
+`

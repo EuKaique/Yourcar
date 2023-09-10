@@ -4,6 +4,7 @@ import { NavBar } from "../../components/navBar";
 import { AboutUs } from "./aboutUs";
 import { BookingSteps } from "./bookingSteps";
 import { PageContainer } from "./styles";
+import { TopCars } from "./topCars";
 import { TopSection } from "./topSection";
 
 export function HomePage(){
@@ -20,6 +21,8 @@ export function HomePage(){
             <BookingSteps />
             <Marginer direction="vertical" margin="8em" />
             <AboutUs />
+            <Marginer direction="vertical" margin="8em" />
+            <TopCars />
         </PageContainer>
     )
 }
